@@ -35,21 +35,44 @@ Implement and analyze breadth-first search.
 
 
 Name: Kane Kriz
+
 Start Date: 19 March 2025
+
+Last Edited: 11 April 2025
+
 Feedback Request 1 Date: X
 
 
 //
 
 
-Response:
+Response: WIP
 
-Response (Bonus):
+
+First, I want to consider the overall functionality of the code from the outer layer inward to help make runtime conclusions as progress is made inward in understanding the implementation.
+
+...
+
+The overall worst case big theta runtime of the implementation is thus AAAAAAA due to this.
+
+
+//
+
+
+Response (Bonus): WIP
+
+
+First, I want to consider the overall functionality of the code from the outer layer inward to help make runtime conclusions as progress is made inward in understanding the implementation.
+
+...
+
+The overall worst case big theta runtime of the implementation is thus AAAAAAA due to this.
 
 
 //
 
 
 Plagiarism Acknowledgement: I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
+
 
 Citations:
