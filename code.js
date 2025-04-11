@@ -124,16 +124,21 @@ function breadthFirstSearch(graph, startNode, targetNode) //bonus function
             var nextNode = nodeQueue.shift();
             var nodePath = findPath_2(nextNode, currentNode);
             
-            if(nodePath.length > 0 && nodePath[0] !== currentNode)//if target found, build applicable path
+            if(nodePath.length > 0) //if target found
             {
-                var fullPath = [currentNode];
-                
-                for(var j = 0; j < nodePath.length; j++) 
+                if (nodePath[0] == nextNode)
                 {
-                    fullPath.push(nodePath[j]);
+                    var fullPath = [currentNode];
+                    
+                    for(var j = 0; j < nodePath.length; j++) 
+                    {
+                        fullPath.push(nodePath[j]);
+                    }
+
+                    return fullPath;
                 }
                 
-                return fullPath;
+                return nodePath;
             }
         }
         
@@ -142,5 +147,6 @@ function breadthFirstSearch(graph, startNode, targetNode) //bonus function
     
     return findPath_2(startNode); //search start from startNode
 }
+
 
 //
