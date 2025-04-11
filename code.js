@@ -81,7 +81,67 @@ function depthFirstSearch(graph, startNode, targetNode) //primary function for t
 //
 
 
-function breadthFirstSearch() //bonus function
+function breadthFirstSearch(graph, startNode, targetNode) //bonus function
 {
-    //
+    var visitedNodes = {}; //visited node tracking
+    var nodeQueue = []; 
+    
+    function findPath_2(currentNode) 
+    {
+        if(currentNode == targetNode) //base case, target found
+        {
+            return [currentNode];
+        }
+        
+        visitedNodes[currentNode] = true;
+        var adjNodes;
+        
+        if(graph[currentNode] == undefined) 
+        {
+            adjNodes = [];
+        }
+            
+        else 
+        {
+            adjNodes = graph[currentNode];
+        }
+        
+        //breath first logic
+        for(var i = 0; i < adjNodes.length; i++) 
+        {
+            var nextNode = adjNodes[i];
+            
+            if(!visitedNodes[nextNode]) 
+            {
+                nodeQueue.push(nextNode);
+                visitedNodes[nextNode] = true;
+            }
+        }
+        
+        //recursive handling for the nodeQueue
+        if(nodeQueue.length > 0) 
+        {
+            var nextNode = nodeQueue.shift();
+            var nodePath = findPath_2(nextNode);
+            
+            if(nodePath.length > 0) //if target found, build applicable path
+            {
+                var fullPath = [currentNode];
+                
+                for(var j = 0; j < nodePath.length; j++) 
+                {
+                    fullPath.push(nodePath[j]);
+                }
+                
+                return fullPath;
+            }
+        }
+        
+        return []; //target not found
+    }
+    
+    return findPath_2(startNode); //search start from startNode
 }
+
+
+//
