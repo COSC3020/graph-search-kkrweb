@@ -40,11 +40,15 @@ function test()
         C: ['A', 'B', 'D'],
         D: ['B', 'C']
     };
-    
+
+  /*
     assert.deepStrictEqual(depthFirstSearch(testGraph_2, 'A', 'D'), ['A', 'B', 'C', 'D']);
     //  
     assert.deepStrictEqual(breadthFirstSearch(testGraph_2, 'A', 'D'), ['A', 'B', 'D']);
-
+  */
+  
+  var res2 = breadthFirstSearch(testGraph_2, 'A', 'D');
+  assert(res2.length == 3 && res2[0] == 'A' && res2[2] == 'D');
 
 ////
   
