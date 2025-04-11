@@ -124,7 +124,7 @@ function breadthFirstSearch(graph, startNode, targetNode) //bonus function
             var nextNode = nodeQueue.shift();
             var nodePath = findPath_2(nextNode, currentNode);
             
-            if(nodePath.length > 0 && (!parentNode || nodePath[0] != currentNode) ) //if target found, build applicable path
+            if(nodePath.length > 0 && nodePath[0] !== currentNode)//if target found, build applicable path
             {
                 var fullPath = [currentNode];
                 
