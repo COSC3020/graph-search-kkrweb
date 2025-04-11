@@ -86,7 +86,7 @@ function breadthFirstSearch(graph, startNode, targetNode) //bonus function
     var visitedNodes = {}; //visited node tracking
     var nodeQueue = [startNode]; //breaks w/o being initialized startNode?
     
-    var parents = {};
+    var parents = {}; //tried to implement this without explicitly declaring this and instead only trying to pass it (treating parents and parentNode as the same) into the internal recursive function, but that just ended up failing a bunch.
     parents[startNode] = null;
     
     function findPath_2(currentNode, parentNode) 
