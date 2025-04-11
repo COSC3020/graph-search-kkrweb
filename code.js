@@ -86,7 +86,7 @@ function breadthFirstSearch(graph, startNode, targetNode) //bonus function
     var visitedNodes = {}; //visited node tracking
     var nodeQueue = [startNode]; //breaks w/o being initialized startNode?
     
-    function findPath_2(currentNode) 
+    function findPath_2(currentNode, parentNode) 
     {
         if(currentNode == targetNode) //base case, target found
         {
@@ -122,9 +122,9 @@ function breadthFirstSearch(graph, startNode, targetNode) //bonus function
         if(nodeQueue.length > 0) 
         {
             var nextNode = nodeQueue.shift();
-            var nodePath = findPath_2(nextNode);
+            var nodePath = findPath_2(nextNode, currentNode);
             
-            if(nodePath.length > 0) //if target found, build applicable path
+            if(nodePath.length > 0 && (!parentNode || nodePath[0] != currentNode) ) //if target found, build applicable path
             {
                 var fullPath = [currentNode];
                 
@@ -142,6 +142,5 @@ function breadthFirstSearch(graph, startNode, targetNode) //bonus function
     
     return findPath_2(startNode); //search start from startNode
 }
-
 
 //
