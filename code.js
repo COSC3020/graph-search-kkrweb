@@ -86,11 +86,22 @@ function breadthFirstSearch(graph, startNode, targetNode) //bonus function
     var visitedNodes = {}; //visited node tracking
     var nodeQueue = [startNode]; //breaks w/o being initialized startNode?
     
+    var parents = {};
+    parents[startNode] = null;
+    
     function findPath_2(currentNode, parentNode) 
     {
         if(currentNode == targetNode) //base case, target found
         {
-            return [currentNode];
+            var path = [currentNode];
+            
+            while(parents[currentNode] !== null) 
+            {
+                currentNode = parents[currentNode];
+                path.push(currentNode);
+            }
+            
+            return path.reverse();
         }
         
         visitedNodes[currentNode] = true;
@@ -115,6 +126,7 @@ function breadthFirstSearch(graph, startNode, targetNode) //bonus function
             {
                 nodeQueue.push(nextNode);
                 visitedNodes[nextNode] = true;
+                parents[nextNode] = currentNode;
             }
         }
         
@@ -126,18 +138,6 @@ function breadthFirstSearch(graph, startNode, targetNode) //bonus function
             
             if(nodePath.length > 0) //if target found
             {
-                if (nodePath[0] == nextNode)
-                {
-                    var fullPath = [currentNode];
-                    
-                    for(var j = 0; j < nodePath.length; j++) 
-                    {
-                        fullPath.push(nodePath[j]);
-                    }
-
-                    return fullPath;
-                }
-                
                 return nodePath;
             }
         }
