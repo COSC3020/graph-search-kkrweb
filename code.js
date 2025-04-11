@@ -84,7 +84,7 @@ function depthFirstSearch(graph, startNode, targetNode) //primary function for t
 function breadthFirstSearch(graph, startNode, targetNode) //bonus function
 {
     var visitedNodes = {}; //visited node tracking
-    var nodeQueue = []; 
+    var nodeQueue = [startNode]; //breaks w/o being initialized startNode?
     
     function findPath_2(currentNode) 
     {
