@@ -25,39 +25,39 @@ starting at the start node, while unvisited nodes remain
 //
 
 
-function depthFirstSearch(graph, startNode, targetNode) 
+function depthFirstSearch(graph, startNode, targetNode) //primary function for the exercise
 {
-    var visitedNodes = {};
+    var visitedNodes = {}; //visited node tracking
 
     function findPath(currentNode) 
     {
-        if(currentNode == targetNode) 
+        if(currentNode == targetNode) //base case, target found
         {
             return [currentNode];
         }
         
         visitedNodes[currentNode] = true;
-        var neighbors;
+        var adjNodes;
         
         if(graph[currentNode] == undefined) 
         {
-            neighbors = [];
+            adjNodes = [];
         }
             
         else 
         {
-            neighbors = graph[currentNode];
+            adjNodes = graph[currentNode];
         }
         
-        for(var i = 0; i < neighbors.length; i++) 
+        for(var i = 0; i < adjNodes.length; i++) //cover all unvisited adjNodes
         {
-            var neighbor = neighbors[i];
+            var nextNode = adjNodes[i];
             
-            if(!visitedNodes[neighbor]) 
+            if(!visitedNodes[nextNode]) 
             {
-                var nodePath = findPath(neighbor);
+                var nodePath = findPath(nextNode); //recursibe depth first as directed
                 
-                if(nodePath.length > 0) 
+                if(nodePath.length > 0) //if target found, build applicable path
                 {
                     var fullPath = [currentNode];
                     
@@ -71,11 +71,17 @@ function depthFirstSearch(graph, startNode, targetNode)
             }
         }
         
-        return [];
+        return []; //target not found
     }
     
-    return findPath(startNode);
+    return findPath(startNode); //search start from startNode
 }
 
 
 //
+
+
+function breadthFirstSearch() //bonus function
+{
+    //
+}
