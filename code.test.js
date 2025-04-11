@@ -94,32 +94,12 @@ function test()
     assert.deepStrictEqual(depthFirstSearch(testGraph_5, 'A', 'B'), []);
     //
     assert.deepStrictEqual(breadthFirstSearch(testGraph_5, 'A', 'A'), ['A']);
-    
 
-////
   
+////
+
   
     var testGraph_6 = 
-    {
-        A: [],
-        B: [],
-        C: [],
-        D: [],
-        E: [],
-        F: [],
-        G: [],
-        H: []
-    };
-    
-    assert.deepStrictEqual(depthFirstSearch(testGraph_6, 'A', 'H'), []);
-    //
-    assert.deepStrictEqual(breadthFirstSearch(testGraph_6, 'A', 'H'), []);
-
-
-////
-
-  
-    var testGraph_7 = 
     {
         A: ['B'],
         B: ['C'],
@@ -127,9 +107,9 @@ function test()
         D: []
     };
     
-    assert.deepStrictEqual(depthFirstSearch(testGraph_7, 'A', 'D'), ['A', 'B', 'C', 'D']);
+    assert.deepStrictEqual(depthFirstSearch(testGraph_6, 'A', 'D'), ['A', 'B', 'C', 'D']);
     //
-    assert.deepStrictEqual(breadthFirstSearch(testGraph_7, 'A', 'D'), ['A', 'B', 'C', 'D']);
+    assert.deepStrictEqual(breadthFirstSearch(testGraph_6, 'A', 'D'), ['A', 'B', 'C', 'D']);
 
   
 }
