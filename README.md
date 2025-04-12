@@ -130,6 +130,7 @@ Plagiarism Acknowledgement: I certify that I have listed all sources used to com
 
 Citations:
 
-https://www.codingdrills.com/tutorial/introduction-to-graph-algorithms/bfs-pseudocode
+“Pseudocode for Breadth-First Search | CodingDrills.” Codingdrills.com, 2024, www.codingdrills.com/tutorial/introduction-to-graph-algorithms/bfs-pseudocode.
 
-This psuedocode was intended for Java but conceptually it was still useful for logic help where applicable: https://atechdaily.com/posts/Breadth-First-Search-Pseudocode-and-Program-in-Java
+This psuedocode was intended for Java but conceptually it was still useful for logic help where applicable:
+Shaddy. “Breadth First Search Is an Algorithm Technique for Traversing a Tree, It Is Opposite of DFS, in BFS All the Nodes at the next Depth Level Are Traversed at the Same Time It Is Similar to Flood Fill Techniques or Wave Motion, Where the Motion Is Parallel An.” Atechdaily.com, ATechDaily, 21 Apr. 2020, atechdaily.com/posts/Breadth-First-Search-Pseudocode-and-Program-in-Java. Accessed 12 Apr. 2025.
