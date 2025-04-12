@@ -46,17 +46,42 @@ Feedback Request 1 Date: X
 //
 
 
-Response: WIP
+Response: 
 
 
-First, I want to consider the overall functionality of the code from the outer layer inward to help make runtime conclusions as progress is made inward in understanding the implementation.
+First, we can consider the step by step functionality of the implementation and associated necessary work.
 
-...
+The algorithm begins by initializing the `visitedNodes` tracking object.
+This requires constant time to initialize.
 
-The overall worst case big theta runtime of the implementation is thus AAAAAAA due to this.
+The primary work for the implementation occurs in the recursive `findPath` function.
+
+`findPath` contains the functionality of the implementation to process each node and its edges within an input graoh.
+
+Considering vertices, `findPath` processes each vertex exactly once due to the visited node tracking mechanism.
+The line `visitedNodes[currentNode] = true` ensures no vertex is processed more than once.
+
+This action contributes $Θ(V)$, with V corresponding to the number of vertices.
+This $Θ(V)$ work is due to each vertex being handled by the recursion once.
+
+For each vertex processed, the algorithm examines all adjacent edges through the adjacency list iteration.
+The loop `for(var i = 0; i < adjNodes.length; i++)` processes each undirected edge once.
+
+This edge functionality contributes $Θ(E)$ work where E represents the number of edges.
+This $Θ(E)$ work results from handling each edge once when visiting the vertex where it originates.
+ 
+The neighbor check `if(!visitedNodes[nextNode])` executes in $O(1)$ time due to the object property lookup, and is thus irrelevant asymptotically relative to our already seen linear terms.
+
+The work of the algorithm overall is thus the combination of $Θ(V)$ vertex handling work with $Θ(E)$ edge work.
+
+In the worst case, the algorithm will visit every vertex and traverse every edge reachable from the start node, and each vertex and edge thus gets processed one time.
+
+This results in an overall complexity of $Θ(V + E)$ for the implementation.
+
 
 
 //
+
 
 
 Response (Bonus): WIP
@@ -69,7 +94,9 @@ First, I want to consider the overall functionality of the code from the outer l
 The overall worst case big theta runtime of the implementation is thus AAAAAAA due to this.
 
 
+
 //
+
 
 
 Plagiarism Acknowledgement: I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
