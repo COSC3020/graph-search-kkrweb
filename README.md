@@ -87,11 +87,36 @@ This results in an overall complexity of $Θ(V + E)$ for the implementation.
 Response (Bonus): WIP
 
 
-First, I want to consider the overall functionality of the code from the outer layer inward to help make runtime conclusions as progress is made inward in understanding the implementation.
+First, we can consider the step by step functionality of the implementation and associated necessary work.
 
-...
+The breadth first search implementation begins by initializing the `visitedNodes` tracking object and `nodeQueue`.
 
-The overall worst case big theta runtime of the implementation is thus AAAAAAA due to this.
+This setup requires constant time to complete.
+
+The primary work occurs in the `findPath_2` function, which implements the breadth first search functionality. 
+
+The function processes nodes in queue order.
+Alongside this, the traversal path is built utilizing parent pointers.
+
+Considering vertices, `findPath_2` processes each vertex exactly once when it is dequeued.
+
+The combination of `visitedNodes[currentNode] = true` and applicable `.shift()` and `.push()` queue management ensures no vertex is processed more than once. 
+
+This vertex processing contributes $Θ(V)$ work where V is the number of vertices.
+
+For each vertex processed, the algorithm examines all adjacent edges through the adjacency list iteration.
+
+The loop `for(var i = 0; i < adjNodes.length; i++)` processes each edge exactly once when its origin vertex is dequeued.
+
+This edge processing contributes $Θ(E)$ work where E is the number of edges.
+
+The neighbor check `if(!visitedNodes[nextNode])` executes in constant time.
+
+.......
+
+Due to this, the complexity of the implementation is $Θ(V+E)$.
+
+
 
 
 
