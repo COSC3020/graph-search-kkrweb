@@ -40,7 +40,7 @@ Start Date: 19 March 2025
 
 Last Edited: 11 April 2025
 
-Feedback Request 1 Date: X
+Feedback Request 1 Date: 12 April 2025
 
 
 //
@@ -70,13 +70,13 @@ The loop `for(var i = 0; i < adjNodes.length; i++)` processes each undirected ed
 This edge functionality contributes $Θ(E)$ work where E represents the number of edges.
 This $Θ(E)$ work results from handling each edge once when visiting the vertex where it originates.
  
-The neighbor check `if(!visitedNodes[nextNode])` executes in $O(1)$ time due to the object property lookup, and is thus irrelevant asymptotically relative to our already seen linear terms.
+The neighbor check `if(!visitedNodes[nextNode])` executes in $Θ(1)$ time due to the object property lookup, and is thus irrelevant asymptotically relative to our already seen linear terms.
 
 The work of the algorithm overall is thus the combination of $Θ(V)$ vertex handling work with $Θ(E)$ edge work.
 
 In the worst case, the algorithm will visit every vertex and traverse every edge reachable from the start node, and each vertex and edge thus gets processed one time.
 
-This results in an overall complexity of $Θ(V + E)$ for the implementation.
+This results in an overall complexity of $Θ(V + E)$ for the depth first implementation.
 
 
 
@@ -84,7 +84,7 @@ This results in an overall complexity of $Θ(V + E)$ for the implementation.
 
 
 
-Response (Bonus): WIP
+Response (Bonus):
 
 
 First, we can consider the step by step functionality of the implementation and associated necessary work.
@@ -96,7 +96,8 @@ This setup requires constant time to complete.
 The primary work occurs in the `findPath_2` function, which implements the breadth first search functionality. 
 
 The function processes nodes in queue order.
-Alongside this, the traversal path is built utilizing parent pointers.
+
+Alongside this, the traversal path is built utilizing parent pointers, via `parents`.
 
 Considering vertices, `findPath_2` processes each vertex exactly once when it is dequeued.
 
@@ -112,9 +113,9 @@ This edge processing contributes $Θ(E)$ work where E is the number of edges.
 
 The neighbor check `if(!visitedNodes[nextNode])` executes in constant time.
 
-.......
+In the worst case, the algorithm must visit every vertex and traverse every edge reachable from the start node.
 
-Due to this, the complexity of the implementation is $Θ(V+E)$.
+Due to this, the complexity of the breath first implementation is $Θ(V + E)$.
 
 
 
@@ -129,4 +130,6 @@ Plagiarism Acknowledgement: I certify that I have listed all sources used to com
 
 Citations:
 
-WIP - Breath first implementation psuedocode 
+https://www.codingdrills.com/tutorial/introduction-to-graph-algorithms/bfs-pseudocode
+
+This psuedocode was intended for Java but conceptually it was still useful for logic help where applicable: https://atechdaily.com/posts/Breadth-First-Search-Pseudocode-and-Program-in-Java
