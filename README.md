@@ -76,7 +76,7 @@ The work of the algorithm overall is thus the combination of $Θ(V)$ vertex hand
 
 In the worst case, the algorithm will visit every vertex and traverse every edge reachable from the start node, and each vertex and edge thus gets processed one time.
 
-This results in an overall complexity of $Θ(V + E)$ for the depth first implementation.
+This results in an overall worst case complexity of $Θ(V + E)$ for the depth first implementation.
 
 
 
@@ -115,7 +115,7 @@ The neighbor check `if(!visitedNodes[nextNode])` executes in constant time.
 
 In the worst case, the algorithm must visit every vertex and traverse every edge reachable from the start node.
 
-Due to this, the complexity of the breath first implementation is $Θ(V + E)$.
+Due to this, the worst case complexity of the breath first implementation is $Θ(V + E)$.
 
 
 
